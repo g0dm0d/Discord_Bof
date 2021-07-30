@@ -7,7 +7,9 @@ from discord import member
 import os
 import shutil
 import sys
-import pymysql
+#import pymysql
+import mysql
+import mysql.connector
 client = commands.Bot(command_prefix = '.')
 
 num_delo = 1
@@ -91,10 +93,6 @@ async def on_message(ctx):
             print('not work')
             print(ex)
 
-        #with open('sud.csv', 'a', encoding='utf-8', newline='') as f:
-        #    writer = csv.writer(f)
-        #    colnames = ['Дело', 'Подающий', 'Виновный', 'Статья', 'Подобности', 'Итог']
-        #    writer.writerow([0+str(num_delo), nick,',', pl2, st, str(more), '-'])
     if ctx.author.id == 279311290688602112 and ctx.content == ('.решение'):
         delo = 0
         pl1 = ctx.author.id
