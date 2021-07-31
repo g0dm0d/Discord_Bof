@@ -91,7 +91,7 @@ async def on_message(ctx):
                 print(ex)
 
 
-        if ctx.author.id == 279311290688602112 or ctx.author.id == 296343158826991628 and ctx.content == ('!вердикт'):
+        if (ctx.author.id == 279311290688602112 or ctx.author.id == 296343158826991628 or ctx.author.id == 446964150472802316 or ctx.author.id == 437426147161276417) and ctx.content == ('!вердикт'):
             delo = 0
             pl1 = ctx.author.id
             await ctx.reply('Укажите номер дела')
@@ -175,7 +175,7 @@ async def on_message(ctx):
                     cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
                     rows = cursor.fetchall()
                     print(str(rows)[3:-4])
-                    if str(rows)[12:-3] == str(pl1) or pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417:
+                    if str(rows)[12:-3] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
                         cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
                         connection.commit()
                         await ctx.channel.send('удалено!')
