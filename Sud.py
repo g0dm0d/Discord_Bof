@@ -171,16 +171,15 @@ async def on_message(ctx):
             deloinfoansw = await client.wait_for('message', check=check)
             deloansw = deloinfoansw.content
             try:
-                with connection.cursor() as cursor:
-                    cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
-                    rows = cursor.fetchall()
-                    print(str(rows)[3:-4])
-                    if str(rows)[12:-3] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
-                        cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
-                        connection.commit()
-                        await ctx.channel.send('удалено!')
-                    else:
-                        await ctx.channel.send('у вас нет прав')
+                cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
+                rows = cursor.fetchall()
+                print(str(rows)[3:-4])
+                if str(rows)[12:-3] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
+                    cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
+                    connection.commit()
+                    await ctx.channel.send('удалено!')
+                else:
+                    await ctx.channel.send('у вас нет прав')
             except Error as e:
                 print(f"The error '{e}' occurred")
 
