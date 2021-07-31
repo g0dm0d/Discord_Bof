@@ -26,10 +26,11 @@ async def on_message(ctx):
     await client.change_presence(activity=discord.Streaming(name="By GODMOD, special thx ModerNik", url="https://www.twitch.tv/nullexcept1on"))
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+        host='remotemysql.com',
+        port=3306,
+        user='tTRNU5Exlf',
+        password='WRCg2k1Wwy',
+        database='tTRNU5Exlf'
         )
         cursor = connection.cursor()
         if ctx.content == ('!новое дело'):
