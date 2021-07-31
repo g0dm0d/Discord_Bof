@@ -12,7 +12,7 @@ import mysql.connector
 from mysql.connector import Error
 client = commands.Bot(command_prefix = '.')
 
-num_delo = 4
+num_delo = 1
 pl1 = None
 pl2 = str()
 st = str()
