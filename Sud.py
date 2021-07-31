@@ -210,7 +210,7 @@ async def on_message(ctx):
                     rows = cursor.fetchall()
                     print(str(rows)[12:-3])
                     print(pl1)
-                    if str(rows)[12:-3] == str(pl1):
+                    if str(rows)[12:-3] == str(pl1) or ctx.author.id == 279311290688602112 or ctx.author.id == 296343158826991628 or ctx.author.id == 446964150472802316 or ctx.author.id == 437426147161276417:
                         cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
                         connection.commit()
                         await ctx.channel.send('удалено!')
