@@ -1,1 +1,1 @@
-s
+worker: python Sud.py
