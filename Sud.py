@@ -76,7 +76,7 @@ async def on_message(ctx):
             embed.add_field(name='Подающий:', value=nick, inline=False)
             embed.add_field(name='Виновный:', value=pl2, inline=False)
             embed.add_field(name='Статьи:', value=st, inline=False)
-            embed.add_field(name='Подобности:', value=more, inline=False)
+            embed.add_field(name='Подробности:', value=more, inline=False)
             await ctx.channel.purge(limit=7)
             await ctx.channel.send(embed=embed)
 
@@ -153,7 +153,7 @@ async def on_message(ctx):
                     embed.add_field(name='Подающий:', value=row[1], inline=False)
                     embed.add_field(name='Виновный:', value=row[2], inline=False)
                     embed.add_field(name='Статьи:', value=row[3], inline=False)
-                    embed.add_field(name='Подобности:', value=row[4], inline=False)
+                    embed.add_field(name='Подробности:', value=row[4], inline=False)
                     embed.add_field(name='Вердикт:', value=row[5], inline=False)
                     embed.add_field(name='Состояние:', value=row[7], inline=False)
                     await ctx.channel.purge(limit=3)
@@ -174,7 +174,7 @@ async def on_message(ctx):
                 cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
                 rows = cursor.fetchall()
                 print(str(rows)[3:-4])
-                if str(rows)[12:-3] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
+                if str(rows)[3:-4] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
                     cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
                     connection.commit()
                     await ctx.channel.send('удалено!')
