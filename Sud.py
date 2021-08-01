@@ -21,6 +21,10 @@ more = str()
 nick = str()
 verd = str()
 sost = str('открыто')
+sqlhost='remotemysql.com'
+sqluser='tTRNU5Exlf'
+sqlpass='WRCg2k1Wwy'
+sqldb='tTRNU5Exlf
 
 @client.event
 async def on_ready():
@@ -30,10 +34,10 @@ async def on_ready():
 async def иск(ctx):
     try:
         connection = mysql.connector.connect(
-            host='remotemysql.com',
-            user='tTRNU5Exlf',
-            password='WRCg2k1Wwy',
-            database='tTRNU5Exlf'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb
         )
         cursor = connection.cursor()
     
@@ -94,10 +98,10 @@ async def вердикт(ctx):
     role = discord.utils.get(ctx.guild.roles, id=870310728270225500)
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb'
         )
         cursor = connection.cursor()
         delo = 0
@@ -140,10 +144,10 @@ async def вердикт(ctx):
 async def дело(ctx, *, deloansw):
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb
         )
         cursor = connection.cursor()
         print(deloansw)
@@ -174,10 +178,10 @@ async def дело(ctx, *, deloansw):
 async def отменить(ctx):
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb
         )
         cursor = connection.cursor()
         pl1 = ctx.author.id
@@ -207,10 +211,10 @@ async def отменить(ctx):
 async def заявки(ctx):
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb
         )
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM sud WHERE delosost='открыто'")
@@ -235,10 +239,10 @@ async def мои_дела(ctx):
     pl1 = ctx.author.id
     try:
         connection = mysql.connector.connect(
-            host='127.0.0.1',
-            user='root',
-            password='',
-            database='bof'
+            host=sqlhost,
+            user=sqluser',
+            password=sqlpass,
+            database=sqldb
         )
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM sud WHERE disid='%s'"% (pl1))
