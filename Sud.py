@@ -12,7 +12,7 @@ import mysql.connector
 from mysql.connector import Error
 client = commands.Bot(command_prefix = '.')
 
-num_delo = 4
+num_delo = 0
 pl1 = None
 pl2 = str()
 st = str()
@@ -174,7 +174,7 @@ async def on_message(ctx):
                 cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
                 rows = cursor.fetchall()
                 print(str(rows)[3:-4])
-                if str(rows)[3:-4] == str(pl1) or (pl1 == 279311290688602112 or pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
+                if str(rows)[3:-4] == str(pl1) or (pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
                     cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
                     connection.commit()
                     await ctx.channel.send('удалено!')
