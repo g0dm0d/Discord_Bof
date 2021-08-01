@@ -99,9 +99,9 @@ async def вердикт(ctx):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
-            database=sqldb'
+            database=sqldb
         )
         cursor = connection.cursor()
         delo = 0
@@ -145,7 +145,7 @@ async def дело(ctx, *, deloansw):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
             database=sqldb
         )
@@ -179,7 +179,7 @@ async def отменить(ctx):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
             database=sqldb
         )
@@ -212,7 +212,7 @@ async def заявки(ctx):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
             database=sqldb
         )
@@ -240,7 +240,7 @@ async def мои_дела(ctx):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
             database=sqldb
         )
