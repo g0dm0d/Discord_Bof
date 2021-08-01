@@ -24,7 +24,7 @@ sost = str('открыто')
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Streaming(name="By GODMOD, special thx ModerNik", url="https://www.twitch.tv/nullexcept1on"))
+    await client.change_presence(activity=discord.Streaming(name="By GODMOD, special thx ModerNik", url="https://youtu.be/ahnfLZKwnTg"))
 
 @client.command()
 async def иск(ctx):
