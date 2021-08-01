@@ -24,7 +24,7 @@ sost = str('открыто')
 sqlhost='remotemysql.com'
 sqluser='tTRNU5Exlf'
 sqlpass='WRCg2k1Wwy'
-sqldb='tTRNU5Exlf
+sqldb='tTRNU5Exlf'
 
 @client.event
 async def on_ready():
