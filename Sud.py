@@ -35,7 +35,7 @@ async def иск(ctx):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
-            user=sqluser',
+            user=sqluser,
             password=sqlpass,
             database=sqldb
         )
