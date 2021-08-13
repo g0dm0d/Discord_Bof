@@ -153,7 +153,7 @@ async def дело(ctx, *, deloansw):
         cursor = connection.cursor()
         print(deloansw)
         try:
-            cursor.execute("SELECT * FROM sud WHERE id='%s'" % (deloansw))
+            cursor.execute("SELECT * FROM sud WHERE id = " + deloansw)
             rows = cursor.fetchall()
             print(rows)
             for row in rows:
@@ -176,7 +176,7 @@ async def дело(ctx, *, deloansw):
         print(f"The error '{e}' occurred")
 
 @client.command()
-async def отменить(ctx):
+async def отменить(ctx, *, deloansw):
     try:
         connection = mysql.connector.connect(
             host=sqlhost,
@@ -186,16 +186,11 @@ async def отменить(ctx):
         )
         cursor = connection.cursor()
         pl1 = ctx.author.id
-        await ctx.reply('Укажите номе дела')
-        def check(r):
-            return r.author.id == pl1
-        deloinfoansw = await client.wait_for('message', check=check)
-        deloansw = deloinfoansw.content
         try:
             cursor.execute("SELECT disid FROM sud WHERE id = " + deloansw)
             rows = cursor.fetchall()
             print(str(rows)[3:-4])
-            if str(rows)[3:-4] == str(pl1) or (pl1 == 296343158826991628 or pl1 == 446964150472802316 or pl1 == 437426147161276417):
+            if str(rows)[3:-4] == str(pl1) or (pl1 == 446964150472802316 or pl1 == 437426147161276417):
                 cursor.execute("DELETE FROM sud WHERE id = " + deloansw)
                 connection.commit()
                 await ctx.channel.send('удалено!')
