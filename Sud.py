@@ -46,7 +46,7 @@ async def иск(ctx):
         nick = ctx.message.author
         pl1 = ctx.author.id
 
-        await ctx.reply('Укажите ник игрока (User#0000)')
+        await ctx.reply('Укажите ник игрока (@User#0000)')
         print(pl1)
         def check(q):
             return q.author.id == pl1
