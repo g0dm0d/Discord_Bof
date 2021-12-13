@@ -277,7 +277,7 @@ async def мои_дела(ctx):
             await ctx.author.send(embed=embed)
     except Error as e:
         print(f"The error '{e}' occurred")
-client.run('ODQzMDUzNzA4MTQ0Mjc5NTYy.YJ-Q8w.hlawkv3z0FAQ_96YaW9IvP2x5UY')
+client.run('-')
 #!новое дело
 #Tesaurus#0294
 #1.3
